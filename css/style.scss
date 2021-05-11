@@ -424,7 +424,6 @@ body{
         top: 0;
         left: 0;
         background: rgb(19, 19, 19);
-        overflow: hidden;
         img{
             width: 100%;
             max-height: 70%;
@@ -440,16 +439,33 @@ body{
         transform: translateZ(75px);
     }
     &__back{
-        display: block;
         transform: rotateY(-90deg) translateZ(75px);
-        padding: 15px 7px 0;
-        text-decoration: none;
         position: relative;
-        p{
-            @include textFormat(16px, 500, $gray);
-            letter-spacing: 2px;
-            text-align: center;
+        padding: 15px 7px 0;
+    }
+    p{
+        @include textFormat(16px, 500, $gray);
+        letter-spacing: 2px;
+        text-align: center;
+    }
+    &__git{
+        position: absolute;
+        left: -24px;
+        top: 70px;
+        padding: 5px 15px;
+        transform: rotate(-90deg);
+        width: 120px;
+        background: rgb(42, 42, 42);
+        transition: all .5s ease;
+        &:hover{
+            filter: brightness(120%);
         }
+        img{
+            width: 100%;
+        }
+    }
+    &__item:hover &__git{
+        left: -84px;
     }
     &__btn{
         position: absolute;
@@ -458,14 +474,17 @@ body{
         transform: translateX(-50%);
     }
 }
-p.go_btn{
-    width: 60px;
-    height: 60px;
+.go_btn{
     line-height: 50px;
-    padding: 5px;
+    text-decoration: none;
+    padding: 5px 10px;
     border-radius: 3px;
     background: $darkemerald;
     color: $white;
+    transition: all .2s ease;
+    &:hover{
+        filter: brightness(200%);
+    }
 }
 //footer section
 .footer{
