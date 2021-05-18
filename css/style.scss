@@ -436,6 +436,7 @@ body{
         }
     }
     &__front{
+        overflow: hidden;
         transform: translateZ(75px);
     }
     &__back{
